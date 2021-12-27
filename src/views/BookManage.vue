@@ -82,9 +82,6 @@
         data() {
             return {
                 tableData: [{
-                    id: 1,
-                    name: '解忧杂货店',
-                    author: '东野圭吾'
                 }]
             }
         },
