@@ -46,7 +46,7 @@
             width="100">
           <template slot-scope="scope">
             <el-button @click="edit(scope.row)" type="text" size="small">修改</el-button>
-            <el-button @click="deleteBook(scope.row)" type="text" size="small">删除</el-button>
+            <el-button @click="deleteUser(scope.row)" type="text" size="small">删除</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -57,10 +57,10 @@
 <script>
     export default {
         methods: {
-            deleteBook(row){
+            deleteUser(row){
                 const _this = this
-                axios.delete('http://localhost:8181/book/deleteById/'+row.id).then(function(resp){
-                    _this.$alert('《'+row.name+'》删除成功！', '消息', {
+                axios.delete('http://localhost:8181/user/deleteById/'+row.uid).then(function(resp){
+                    _this.$alert('《'+row.nickName+'》删除成功！', '消息', {
                         confirmButtonText: '确定',
                         callback: action => {
                             window.location.reload()
