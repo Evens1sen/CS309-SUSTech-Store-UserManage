@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import BookManage from '../views/BookManage'
-import AddBook from '../views/AddBook'
+import UserManage from '../views/UserManage'
+import AddUser from '../views/AddUser'
 import Index from '../views/Index'
-import BookUpdate from '../views/BookUpdate'
+import UserUpdate from '../views/UserUpdate'
+import Login from '../views/Login'
 
 Vue.use(VueRouter)
 
@@ -13,25 +14,30 @@ const routes = [
     name:"用户管理",
     component:Index,
     show:true,
-    redirect:"/BookManage",
+    redirect:"/login",
     children:[
       {
-        path:"/BookManage",
+        path:"/UserManage",
         name:"查询用户",
-        component:BookManage
+        component:UserManage
       },
       {
-        path:"/AddBook",
+        path:"/AddUser",
         name:"添加用户",
-        component:AddBook
+        component:AddUser
       }
     ]
   },
   {
     path:'/update',
-    component:BookUpdate,
+    component:UserUpdate,
     show:false
-  }
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
 ]
 
 const router = new VueRouter({
